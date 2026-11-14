@@ -185,7 +185,7 @@ function BoxTab({ stats, roster, teamName, oppName, bundle }: { stats: GameStats
   usRows.push({ id: "tot", name: `${t("Total")} ${teamName}`, s: { ...stats.team.us, pm: stats.score.us - stats.score.them }, bold: true });
   const themRows: BoxRow[] = Object.entries(stats.oppPlayers).map(([id, s]) => {
     const op = bundle.opponent?.players.find((x) => x.id === id);
-    return { id, num: op?.number, name: op?.name ?? oppName, s };
+    return { id, num: op?.number, name: op?.name ?? "", s };
   });
   themRows.push({ id: "tot", name: `${t("Total")} ${oppName}`, s: { ...stats.team.them, pm: stats.score.them - stats.score.us, secs: 0 }, bold: true });
   return (

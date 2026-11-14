@@ -54,6 +54,18 @@ function Onboarding() {
         </button>
         <p className="muted text-xs">{t("Todo se guarda en tu dispositivo y funciona sin internet. Puedes iniciar sesión luego para sincronizar y compartir.")}</p>
       </form>
+      <button
+        className="btn w-full mt-3"
+        disabled={busy}
+        onClick={async () => {
+          setBusy(true);
+          const { loadDemo } = await import("@/lib/demo");
+          setClubId(await loadDemo());
+          setBusy(false);
+        }}
+      >
+        <Icon name="ball" /> {t("Ver con datos de demostración")}
+      </button>
       <div className="text-center mt-4">
         <Link href="/settings/" className="text-sm text-brand font-semibold">
           {t("¿Ya tienes cuenta o un código de invitación?")}

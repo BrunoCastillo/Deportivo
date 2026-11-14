@@ -12,7 +12,7 @@ const H = 140;
 function zonePath(z: Zone): string {
   // Construido muestreando la grilla: celdas de 5 dm que pertenecen a la zona.
   const cells: string[] = [];
-  const step = 5;
+  const step = 2.5;
   for (let x = 0; x < W; x += step) {
     for (let y = 0; y < H; y += step) {
       if (zoneOf((x + step / 2) / W, (y + step / 2) / H) === z) cells.push(`M${x} ${y}h${step}v${step}h-${step}z`);

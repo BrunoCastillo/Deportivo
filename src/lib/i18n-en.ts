@@ -445,4 +445,9 @@ export const EN: Record<string, string> = {
   "Últimos resultados": "Latest results",
   "última": "last",
   "En el dispositivo": "On device",
+  "Ver con datos de demostración": "Try with demo data",
+  "Datos de demostración": "Demo data",
+  "Crea un club de ejemplo con plantilla, rivales, 6 partidos simulados jugada a jugada y entrenamientos. Puedes eliminarlo después desde Club.": "Creates a sample club with roster, opponents, 6 play-by-play simulated games and practices. You can delete it later from Club.",
+  "Cargar datos de demostración": "Load demo data",
+  "Club de demostración creado": "Demo club created",
 };

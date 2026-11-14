@@ -160,6 +160,22 @@ export default function SettingsPage() {
           </div>
         </section>
 
+        <section className="card p-4 space-y-3">
+          <div className="font-bold">{t("Datos de demostración")}</div>
+          <p className="muted text-sm">{t("Crea un club de ejemplo con plantilla, rivales, 6 partidos simulados jugada a jugada y entrenamientos. Puedes eliminarlo después desde Club.")}</p>
+          <button
+            className="btn"
+            onClick={() =>
+              wrap(async () => {
+                const { loadDemo } = await import("@/lib/demo");
+                setClubId(await loadDemo());
+              }, t("Club de demostración creado"))
+            }
+          >
+            <Icon name="ball" /> {t("Cargar datos de demostración")}
+          </button>
+        </section>
+
         {msg && <div className={`card p-3 text-sm ${msg.ok ? "text-ok" : "text-bad"}`}>{msg.text}</div>}
 
         <p className="muted text-xs text-center">Rebote · v0.1 · {t("Datos en este dispositivo")}: IndexedDB</p>
